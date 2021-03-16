@@ -3,4 +3,4 @@ project(MenTou)
 
 set(CMAKE_CXX_STANDARD 11)
 
-add_executable(MenTou 0311/leetcode_860.cpp)
+add_executable(MenTou 0311/leetcode_969.cpp)

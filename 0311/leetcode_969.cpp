@@ -50,10 +50,12 @@ public:
             //if(ind[i] == i -1) continue;
             if (ind[i] + 1 != 1){
                 ret.push_back(ind[i] + 1);
+                //reverse the highest value one to the beginning
                 reverse(arr, ind[i] + 1, ind);
             }
             if(i != 1) {
                 ret.push_back(i);
+                //revers last, then last -1 to bring the highest one to the end
                 reverse(arr, i, ind);
             }
         }

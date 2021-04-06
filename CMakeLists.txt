@@ -3,4 +3,4 @@ project(MenTou)
 
 set(CMAKE_CXX_STANDARD 11)
 
-add_executable(MenTou 0318/leetcode_1124.cpp)
+add_executable(MenTou 0402/buildTreeFromInorderPreorder.cpp)

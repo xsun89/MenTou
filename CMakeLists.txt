@@ -3,4 +3,4 @@ project(MenTou)
 
 set(CMAKE_CXX_STANDARD 11)
 
-add_executable(MenTou 0409/OJ477.cpp)
+add_executable(MenTou 0409/OJ477.cpp 0409/OJ479.cpp)

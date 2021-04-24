@@ -3,44 +3,45 @@
 //
 
 #include <iostream>
-#include <vector>
-#include <fstream>
+#include <cmath>
 
 using namespace std;
 
-int ans11[10000][2], ans21[10000][2];
-vector<string> data;
-
-void loadData(vector<vector<long long>> &data)
+int ans11[10000][2], ans21[10000][2], ind11, ind21;
+void print()
 {
-    ifstream inFile;
-    // open the file stream
-    inFile.open("/Users/xsun/CLionProjects/Haizei/MenTou/0402/caidan.txt");
-    // check if opening a file failed
-    if (inFile.fail()) {
-        cerr << "Error opeing a file" << endl;
-        inFile.close();
-        exit(1);
+    for(int i = 0; i < ind11; i++){
+        cout << ans11[i][0] << ":" << ans11[i][1] << endl;
     }
-    string line;
-    long long value;
-    int i = 0;
-    while (getline(inFile, line)) {
-        istringstream iss(line);
-        if(data.size() == i){
-            data.push_back(vector<long long>());
-        }
-        while(iss >> value){
-            data[i].push_back(value);
-        }
-        i++;
+    cout << endl;
+    for(int i = 0; i < ind11; i++){
+        cout << ans21[i][0] << ":" << ans21[i][1] << endl;
     }
-    inFile.close();
-    return;
+
 }
 int main()
 {
-
-
-    return 0;
+   char s[55];
+   while(cin >> s){
+       for(int i = 0; s[i]; i++){
+           if(s[i] == 'E'){
+               print();
+               return 0;
+           }
+           if(s[i] == 'W'){
+               ans11[ind11][0]++;
+               ans21[ind21][0]++;
+           }else{
+               ans11[ind11][1]++;
+               ans21[ind21][1]++;
+           }
+           if(ans11[ind11][0] == 11 && ans11[ind11][1] == 11 && abs(ans11[ind11][0] - ans11[ind11][1]) >= 2){
+               ind11++;
+           }
+           if(ans21[ind21][0] == 21 && ans21[ind21][1] == 21 && abs(ans21[ind21][0] - ans21[ind21][1]) >= 2){
+               ind11++;
+           }
+       }
+   }
+   return 0;
 }

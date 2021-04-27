@@ -13,7 +13,7 @@ int func(int x)
     if(x == 0){
         return 6;
     }
-    int t;
+    int t = 0;
     while(x){
         t += nums[x % 10];
         x /= 10;
@@ -23,7 +23,7 @@ int func(int x)
 
 bool check(int a, int b){
     int c = a + b;
-    return (func(c) + func(a) + func(b)) + 4 == n;
+    return func(c) + func(a) + func(b) + 4 == n;
 }
 int main()
 {

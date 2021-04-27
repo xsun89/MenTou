@@ -32,7 +32,7 @@ int main()
         for (int j = 0; j < 2000; j++){
             if(check(i, j)){
                 ans++;
-                cout << i << "+" << j << "=" << i+j << endl;
+                //cout << i << "+" << j << "=" << i+j << endl;
             }
         }
     }

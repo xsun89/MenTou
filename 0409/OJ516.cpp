@@ -25,6 +25,14 @@ int main() {
         }
     }
 
+    for (int i = 0; i < n; i++){
+        o[i] += o[i - 1];
+    }
+
+    for(int i = n - 2; i >= 0; i--){
+        w[i] += w[i + 1];
+    }
+
     for (int i = 1; i <= n; i++){
         if(s[i] == 'O'){
             ans += numc[i] * numw[i];

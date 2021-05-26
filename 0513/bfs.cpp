@@ -17,7 +17,13 @@ char mmap[105][105];
 int main() {
     cin >> n >> m;
     for(int i = 1; i <= n; i++){
-
+        for(int j = 0; j <= m; j++) {
+            cin >> mmap[i][j];
+            if(mmap[i][j] == 'S'){
+                sx = i;
+                sy = j;
+            }
+        }
     }
 
     return 0;

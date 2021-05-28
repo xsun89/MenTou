@@ -11,15 +11,15 @@ struct node {
 };
 
 int n, m, sx, sy;
-int dir[4][2] = {0, 1, 1, 0, 0, -1, -1, 0};
-char mmap[505][505];
+int dir[8][2] = {1, 2, 1, -2, 2, 1, 2, -1, -1, 2, -1, -2, -2, 1, -2, -1};
+char mmap[200][200];
 
 int main() {
-    cin >> n >> m;
+    cin >> m >> n;
     for(int i = 1; i <= n; i++){
         for(int j = 1; j <= m; j++) {
             cin >> mmap[i][j];
-            if(mmap[i][j] == '2'){
+            if(mmap[i][j] == 'K'){
                 sx = i;
                 sy = j;
             }
@@ -30,13 +30,15 @@ int main() {
     while(!que.empty()){
         node tmp = que.front();
         que.pop();
-        for(int i = 0; i < 4; i++){
+        for(int i = 0; i < 8; i++){
             int x = tmp.x + dir[i][0];
             int y = tmp.y + dir[i][1];
-            if(mmap[x][y] == '3'){
+            if(x < 1 || y < 1 || x > n || y > m) continue;
+            if(mmap[x][y] == 'H'){
                 cout << tmp.step + 1 << endl;
                 return 0;
             }
+
             if(mmap[x][y] == '.'){
                 mmap[x][y] = 0;
                 que.push((node){x, y, tmp.step + 1});

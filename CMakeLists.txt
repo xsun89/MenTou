@@ -3,4 +3,4 @@ project(MenTou)
 
 set(CMAKE_CXX_STANDARD 11)
 
-add_executable(MenTou 0507/mergeSort.cpp 0513/bfs.cpp)
+add_executable(MenTou 0513/OJ405-DFS.cpp)

@@ -3,4 +3,4 @@ project(MenTou)
 
 set(CMAKE_CXX_STANDARD 11)
 
-add_executable(MenTou 0513/OJ402-BFS.cpp)
+add_executable(MenTou 0513/OJ528-BFS.cpp 0513/OJ530.cpp)
